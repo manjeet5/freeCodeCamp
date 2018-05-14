@@ -11,7 +11,8 @@
       "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.js"
     }
   ],
-  "template": "<body><div id='root'></div><div id='challenge-node'></div>${ source }</body>",
+  "template":
+    "<body><div id='root'></div><div id='challenge-node'></div>${ source }</body>",
   "challenges": [
     {
       "id": "587d7dbc367417b2b2512bb1",
@@ -30,11 +31,7 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
-          "contents": [
-            "",
-            "const JSX = <div></div>;",
-            ""
-          ],
+          "contents": ["", "const JSX = <div></div>;", ""],
           "tail": "ReactDOM.render(JSX, document.getElementById('root'))"
         }
       },
@@ -42,9 +39,7 @@
         "assert(JSX.type === 'h1', 'message: The constant <code>JSX</code> should return an <code>h1</code> element.');",
         "assert(Enzyme.shallow(JSX).contains('Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
-      "solutions": [
-        "const JSX = <h1>Hello JSX!</h1>;"
-      ],
+      "solutions": ["const JSX = <h1>Hello JSX!</h1>;"],
       "challengeType": 6,
       "isRequired": false,
       "translations": {},
@@ -74,10 +69,7 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
-          "contents": [
-            "// write your code here",
-            ""
-          ],
+          "contents": ["// write your code here", ""],
           "tail": "ReactDOM.render(JSX, document.getElementById('root'))"
         }
       },
@@ -291,7 +283,8 @@
             "  // change code above this line",
             "}"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -339,7 +332,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -399,7 +393,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<ParentComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<ParentComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -472,7 +467,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<TypesOfFood />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<TypesOfFood />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -584,7 +580,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<TypesOfFood />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<TypesOfFood />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -706,10 +703,7 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
-          "contents": [
-            "// change code below this line",
-            ""
-          ]
+          "contents": ["// change code below this line", ""]
         }
       },
       "tests": [
@@ -771,7 +765,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<Calendar />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<Calendar />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -880,7 +875,8 @@
             "// change code below this line",
             ""
           ],
-          "tail": "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -930,7 +926,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -993,7 +990,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1060,7 +1058,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<ResetPassword />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<ResetPassword />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1068,7 +1067,7 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === 'ReturnTempPassword'; })(), 'message: The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('ReturnTempPassword').props().tempPassword; })(), 'message: The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find('ReturnTempPassword').props().tempPassword; return typeof temp === 'string' && temp.length >= 8; })(), 'message: The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least <code>8</code> characters.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('strong').text() && mockedComponent.find('ReturnTempPassword').props().tempPassword; })(), 'message: The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.');"
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('strong').text() === mockedComponent.find('ReturnTempPassword').props().tempPassword; })(), 'message: The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.');"
       ],
       "solutions": [
         "class ReturnTempPassword extends React.Component {\n  constructor(props) {\n    super(props);\n\n  }\n  render() {\n    return (\n        <div>\n            <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>\n        </div>\n    );\n  }\n};\n\nclass ResetPassword extends React.Component {\n  constructor(props) {\n    super(props);\n\n  }\n  render() {\n    return (\n        <div>\n          <h2>Reset Password</h2>\n          <h3>We've generated a new temporary password for you.</h3>\n          <h3>Please reset this password from your account settings ASAP.</h3>\n          { /* change code below this line */ }\n          <ReturnTempPassword tempPassword=\"serrPbqrPnzc\" />\n          { /* change code above this line */ }\n        </div>\n    );\n  }\n};"
@@ -1115,7 +1114,8 @@
             "// change code below this line",
             ""
           ],
-          "tail": "ReactDOM.render(<CampSite />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<CampSite />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1167,7 +1167,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<StatefulComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<StatefulComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1221,7 +1222,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1274,7 +1276,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1332,7 +1335,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1395,7 +1399,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1460,7 +1465,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1517,7 +1523,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<Counter />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<Counter />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1580,7 +1587,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<ControlledInput />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<ControlledInput />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1856,7 +1864,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1910,7 +1919,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1979,7 +1989,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2052,7 +2063,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<Controller />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<Controller />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2129,7 +2141,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<Controller />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<Controller />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2178,7 +2191,8 @@
             "};",
             ""
           ],
-          "tail": "ReactDOM.render(<Colorful />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<Colorful />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2224,7 +2238,8 @@
             "};",
             ""
           ],
-          "tail": "ReactDOM.render(<Colorful />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<Colorful />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2395,7 +2410,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2453,7 +2469,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2533,7 +2550,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<CheckUserAge />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<CheckUserAge />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2613,7 +2631,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<GameOfChance />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<GameOfChance />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2681,7 +2700,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<GateKeeper />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<GateKeeper />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2761,7 +2781,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyToDoList />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyToDoList />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2818,7 +2839,8 @@
             "  );",
             "};"
           ],
-          "tail": "ReactDOM.render(<Frameworks />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<Frameworks />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2898,7 +2920,8 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+          "tail":
+            "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
